@@ -6,10 +6,11 @@
     <style>
         body { font-family: Arial, sans-serif; padding: 20px; max-width: 800px; margin: auto; }
         h1 { color: #2c3e50; }
-        #content { display: none; margin-top: 30px; }
+        h2 { margin-top: 40px; }
+        details { margin-bottom: 20px; }
+        summary { font-weight: bold; cursor: pointer; font-size: 1.1em; }
+        #content { display: none; }
         .error { color: red; }
-        input[type="text"] { padding: 8px; width: 200px; }
-        button { padding: 8px 12px; margin-left: 10px; }
     </style>
 </head>
 <body>
@@ -20,41 +21,38 @@
     <p id="message" class="error"></p>
 
     <div id="content">
-        <h2>Assistance Dépannage – Caisse Enregistreuse</h2>
+        <h2>🖥️ Problèmes avec la caisse / écran</h2>
+        <details>
+            <summary>La caisse ne s’allume pas</summary>
+            <ul>
+                <li>Vérifiez que la prise est bien branchée au secteur.</li>
+                <li>Testez avec une autre prise électrique.</li>
+                <li>Maintenez le bouton ON appuyé pendant 5 secondes.</li>
+                <li>Si toujours rien : contactez le support.</li>
+            </ul>
+        </details>
+        <details>
+            <summary>Le logiciel est bloqué ou l’écran reste figé</summary>
+            <ul>
+                <li>Appuyez sur CTRL + ALT + SUPPR et redémarrez l’ordinateur.</li>
+                <li>Attendez 2 minutes avant de relancer le logiciel de caisse.</li>
+                <li>Si le problème persiste, contactez le support technique.</li>
+            </ul>
+        </details>
 
-        <h3>🛑 La caisse ne s’allume pas</h3>
-        <ul>
-            <li>Vérifiez que la prise est bien branchée au secteur.</li>
-            <li>Testez avec une autre prise électrique.</li>
-            <li>Maintenez le bouton ON appuyé pendant 5 secondes.</li>
-            <li>Si toujours rien : contactez le support.</li>
-        </ul>
-
-        <h3>🧾 L’imprimante de ticket ne fonctionne plus</h3>
-        <ul>
-            <li>Vérifiez que le papier est bien chargé (face thermique vers le haut).</li>
-            <li>Redémarrez l’imprimante avec le bouton d’alimentation.</li>
-            <li>Vérifiez le câble USB / RJ12 entre la caisse et l’imprimante.</li>
-            <li>Vérifiez que l’imprimante est bien sélectionnée dans les paramètres du logiciel.</li>
-        </ul>
-
-        <h3>💻 L’écran reste bloqué ou le logiciel ne répond plus</h3>
-        <ul>
-            <li>Appuyez sur CTRL + ALT + SUPPR et redémarrez l’ordinateur.</li>
-            <li>Attendez 2 minutes avant de relancer le logiciel de caisse.</li>
-            <li>Si le problème persiste, contactez le support technique.</li>
-        </ul>
-
-        <h3>📡 Perte de connexion réseau / TPE ne fonctionne plus</h3>
-        <ul>
-            <li>Vérifiez que le câble réseau est bien branché.</li>
-            <li>Redémarrez la box Internet.</li>
-            <li>Redémarrez la caisse ou le TPE.</li>
-            <li>Testez une autre prise RJ45 si possible.</li>
-        </ul>
+        <h2>🧾 Problèmes avec l’imprimante ticket</h2>
+        <details>
+            <summary>L’imprimante ne fonctionne plus</summary>
+            <ul>
+                <li>Vérifiez que le papier est bien chargé (face thermique vers le haut).</li>
+                <li>Redémarrez l’imprimante avec le bouton d’alimentation.</li>
+                <li>Vérifiez le câble USB / RJ12 entre la caisse et l’imprimante.</li>
+                <li>Vérifiez que l’imprimante est bien sélectionnée dans les paramètres du logiciel.</li>
+            </ul>
+        </details>
 
         <hr>
-        <p><strong>Besoin d’aide ?</strong> Appelez notre hotline au <a href="tel:+33123456789">07 88 69 58 21</a> ou <a href="mailto:support@votre-entreprise.fr">envoyez-nous un email</a>.</p>
+        <p><strong>Besoin d’aide ?</strong> Appelez notre hotline au <a href="tel:+33788695821">07 88 69 58 21</a> ou <a href="mailto:support@votre-entreprise.fr">envoyez-nous un email</a>.</p>
     </div>
 
     <script>
