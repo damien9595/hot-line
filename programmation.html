@@ -6,39 +6,45 @@
     <style>
         body { font-family: Arial, sans-serif; padding: 20px; max-width: 900px; margin: auto; }
         h1 { color: #2c3e50; }
-        h2 { margin-top: 40px; }
-        video { width: 100%; max-width: 100%; margin-top: 10px; margin-bottom: 30px; }
+        h2 { margin-top: 30px; cursor: pointer; color: #2980b9; }
+        video { width: 100%; max-width: 100%; margin-top: 10px; margin-bottom: 30px; display: none; }
     </style>
+    <script>
+        function toggleVideo(id) {
+            const video = document.getElementById(id);
+            video.style.display = (video.style.display === "none" || video.style.display === "") ? "block" : "none";
+        }
+    </script>
 </head>
 <body>
     <h1>⚙️ Dépannage – Programmation</h1>
 
-    <h2>1. Modifier prix</h2>
-    <video controls>
+    <h2 onclick="toggleVideo('video1')">1. Modifier prix</h2>
+    <video id="video1" controls>
         <source src="videos/video1.mp4" type="video/mp4">
         Votre navigateur ne prend pas en charge la lecture vidéo.
     </video>
 
-    <h2>2. Placer un produit</h2>
-    <video controls>
+    <h2 onclick="toggleVideo('video2')">2. Placer un produit</h2>
+    <video id="video2" controls>
         <source src="videos/video2.mp4" type="video/mp4">
         Votre navigateur ne prend pas en charge la lecture vidéo.
     </video>
 
-    <h2>3. Créer un menu</h2>
-    <video controls>
+    <h2 onclick="toggleVideo('video3')">3. Créer un menu</h2>
+    <video id="video3" controls>
         <source src="videos/video3.mp4" type="video/mp4">
         Votre navigateur ne prend pas en charge la lecture vidéo.
     </video>
 
-    <h2>4. Créer un produit</h2>
-    <video controls>
+    <h2 onclick="toggleVideo('video4')">4. Créer un produit</h2>
+    <video id="video4" controls>
         <source src="videos/video4.mp4" type="video/mp4">
         Votre navigateur ne prend pas en charge la lecture vidéo.
     </video>
 
-     <h2>5. Changer tarif bar</h2>
-    <video controls>
+    <h2 onclick="toggleVideo('video5')">5. Changer tarif bar</h2>
+    <video id="video5" controls>
         <source src="videos/video5.mp4" type="video/mp4">
         Votre navigateur ne prend pas en charge la lecture vidéo.
     </video>
