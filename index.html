@@ -1,58 +1,32 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Accès Dépannage</title>
-    <style>
-        body { font-family: Arial, sans-serif; padding: 20px; max-width: 800px; margin: auto; text-align: center; }
-        h1 { color: #2c3e50; }
-        .error { color: red; }
-        #menu { display: none; margin-top: 40px; }
-        .menu-item {
-            display: block;
-            padding: 20px;
-            margin: 10px auto;
-            width: 80%;
-            max-width: 400px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            background-color: #f8f8f8;
-            font-size: 1.2em;
-            cursor: pointer;
-            text-decoration: none;
-            color: #000;
-        }
-        .menu-item:hover {
-            background-color: #e0e0e0;
-        }
-    </style>
-</head>
-<body>
-    <h1>Accès sécurisé – Dépannage</h1>
-    <p>Veuillez entrer votre code pour accéder au menu de dépannage.</p>
-    <input type="text" id="codeInput" placeholder="Entrez le code" />
-    <button onclick="verifierCode()">Valider</button>
-    <p id="message" class="error"></p>
+<script>
+    function genererCodeTournant() {
+        const today = new Date();
+        const jour = today.getDate();
+        const mois = today.getMonth(); // 0 = janvier, 11 = décembre
+        const annee = today.getFullYear();
 
-    <div id="menu">
-        <h2>Choisissez une catégorie :</h2>
-        <a class="menu-item" href="caisses.html">🖥️ Caisses / Écrans</a>
-        <a class="menu-item" href="imprimantes.html">🧾 Imprimantes Ticket</a>
-        <a class="menu-item" href="programmation.html">⚙️ Programmation</a>
-    </div>
+        // Obtenir le dernier jour du mois
+        const dernierJour = new Date(annee, mois + 1, 0).getDate();
 
-    <script>
-        function verifierCode() {
-            const input = document.getElementById('codeInput').value.trim();
-            const attendu = "293029";
-            const message = document.getElementById('message');
-            if (input === attendu) {
-                document.getElementById('menu').style.display = 'block';
-                message.textContent = '';
-            } else {
-                message.textContent = "Code incorrect. Veuillez réessayer.";
-            }
+        // Calcul du jour + 1 avec retour à 1 si nécessaire
+        const jourSuivant = jour === dernierJour ? 1 : jour + 1;
+
+        // Formater en deux chiffres
+        const j = String(jour).padStart(2, '0');
+        const js = String(jourSuivant).padStart(2, '0');
+
+        return j + js + j;
+    }
+
+    function verifierCode() {
+        const input = document.getElementById('codeInput').value.trim();
+        const attendu = genererCodeTournant();
+        const message = document.getElementById('message');
+        if (input === attendu) {
+            document.getElementById('menu').style.display = 'block';
+            message.textContent = '';
+        } else {
+            message.textContent = "Code incorrect. Veuillez réessayer.";
         }
-    </script>
-</body>
-</html>
+    }
+</script>
